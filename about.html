@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Khorommbi Attorneys Inc.</title>
     <link rel="stylesheet" href="aboutstyles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -31,24 +34,30 @@
         </div>
     </header>
 
-    <!-- ================= PAGE HERO ================= -->
-    <div class="page-header">
-        <div class="page-header-overlay"></div>
-        <div class="page-header-content">
-            <span class="page-label">About Us</span>
+    <!-- ================= OUR STORY HEADER WITH QUOTE ================= -->
+    <section class="story-header">
+        <div class="story-overlay"></div>
+        <div class="story-content">
+            <span class="page-label">ABOUT US</span>
             <h1 class="page-title">Our Story</h1>
+            <div class="story-quote">
+                <span class="quote-mark">"</span>
+                <p class="quote-text">
+                    True counsel is not merely about knowing the law, but understanding the people it serves.
+                </p>
+            </div>
         </div>
-    </div>
+    </section>
 
     <!-- ================= MAIN ================= -->
     <main>
 
         <!-- ================= ABOUT THE FIRM ================= -->
         <section class="about-section">
-            <div class="section-container">
-                <div class="about-content">
-                    <span class="section-label">About the Firm</span>
-                    <h2 class="section-title">A Legacy of Legal Excellence</h2>
+            <div class="about-container">
+                <div class="about-text-content">
+                    <span class="section-label">ABOUT THE FIRM</span>
+                    <h2 class="section-heading">A Legacy of Legal Excellence</h2>
                     <p class="section-description">
                         We are a professional law firm committed to providing reliable,
                         effective, and client-focused legal services. With deep roots in
@@ -61,31 +70,40 @@
                         represent receives the same unwavering dedication and strategic insight.
                     </p>
                 </div>
-                <div class="about-image">
-                    <div class="image-frame">
-                        <div class="image-placeholder">️</div>
+                <div class="about-image-wrapper">
+                    <img src="pic.png" alt="Law Firm" class="about-image">
+                    <div class="image-quote-overlay">
+                        <span class="image-quote-mark">"</span>
+                        <p class="image-quote-text">
+                            Justice is the constant and perpetual will to allot to every man his due.
+                        </p>
+                        <span class="image-quote-author">— Ulpian</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ================= VISION ================= -->
+        <!-- ================= OUR VISION ================= -->
         <section class="vision-section">
-            <div class="section-container">
-                <div class="vision-image">
-                    <div class="image-frame">
-                        <div class="image-placeholder">️</div>
+            <div class="vision-container">
+                <div class="vision-quote-content">
+                    <span class="section-label light">OUR VISION</span>
+                    <div class="vision-quote-box">
+                        <span class="vision-quote-mark">"</span>
+                        <p class="vision-quote-text">
+                            The law is reason, free from passion.
+                        </p>
+                        <span class="vision-quote-author">— Aristotle</span>
                     </div>
                 </div>
-                <div class="vision-content">
-                    <span class="section-label">Our Vision</span>
-                    <h2 class="section-title">Law as an Instrument of Change</h2>
-                    <p class="section-description">
+                <div class="vision-text-content">
+                    <h2 class="section-heading light">Law as an Instrument of Change</h2>
+                    <p class="section-description light">
                         Our mission is to be a trusted partner through complex moments.
                         Our vision is to use the law as an instrument of positive societal
                         change that is measured, principled and genuinely useful.
                     </p>
-                    <p class="section-description">
+                    <p class="section-description light">
                         We believe that meaningful transformation begins one client, one matter,
                         at a time. Through deliberate work and unwavering ethics, we strive to
                         bridge the distance between people and justice.
@@ -95,30 +113,57 @@
         </section>
 
         <!-- ================= WHY CHOOSE US ================= -->
-        <section class="whyus-section">
-            <div class="section-container">
-                <span class="section-label centered">Why Choose Us</span>
-                <h2 class="section-title centered">Our Core Values</h2>
-                <div class="values-section">
-                    <div class="value-box">
-                        <div class="icon"></div>
-                        <h3>Reliability</h3>
-                        <p>Consistent counsel you can plan around.</p>
-                    </div>
-                    <div class="value-box">
-                        <div class="icon">⚖</div>
-                        <h3>Ethics</h3>
-                        <p>Decisions guided by principle, not expedience.</p>
-                    </div>
-                    <div class="value-box">
-                        <div class="icon">♡</div>
-                        <h3>Commitment</h3>
-                        <p>Dedicated to providing exceptional legal service.</p>
-                    </div>
+<section class="whyus-section">
+    <div class="whyus-container">
+        <span class="section-label centered">Why Choose Us</span>
+        <h2 class="section-heading centered">Our Core Values</h2>
+        <div class="values-section">
+            
+            <!-- Reliability -->
+            <div class="value-box">
+                <div class="icon-wrapper">
+                    <svg class="value-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
                 </div>
+                <h3>Reliability</h3>
+                <p class="value-description">Consistent counsel you can plan around.</p>
+                <div class="value-divider"></div>
+                <p class="value-quote">"The foundation of justice is good faith."</p>
+                <span class="value-quote-author">— Cicero</span>
             </div>
-        </section>
 
+            <!-- Ethics -->
+            <div class="value-box">
+                <div class="icon-wrapper">
+                    <svg class="value-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
+                    </svg>
+                </div>
+                <h3>Ethics</h3>
+                <p class="value-description">Decisions guided by principle, not expedience.</p>
+                <div class="value-divider"></div>
+                <p class="value-quote">"In law, the only thing more powerful than the sword is the scale."</p>
+                <span class="value-quote-author">— Ancient Proverb</span>
+            </div>
+
+            <!-- Commitment -->
+            <div class="value-box">
+                <div class="icon-wrapper">
+                    <svg class="value-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                    </svg>
+                </div>
+                <h3>Commitment</h3>
+                <p class="value-description">Dedicated to providing exceptional legal service.</p>
+                <div class="value-divider"></div>
+                <p class="value-quote">"The law is not a profession, it is a calling to serve."</p>
+                <span class="value-quote-author">— Louis Brandeis</span>
+            </div>
+
+        </div>
+    </div>
+</section>
     </main>
 
     <!-- ================= FOOTER ================= -->
