@@ -107,28 +107,33 @@ body {
     transition: all 0.3s ease;
 }
 
-/* ================= PAGE HERO ================= */
-.page-header {
+/* ================= OUR STORY HEADER WITH QUOTE ================= */
+.story-header {
     position: relative;
     background-image: url('about-bg.jpg');
     background-size: cover;
     background-position: center;
-    padding: 100px 5%;
+    padding: 80px 5% 60px;  /* Reduced from 140px 5% 100px */
     text-align: center;
+    min-height: 350px;  /* Reduced from 500px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.page-header-overlay {
+.story-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(154, 84, 40, 0.85) 0%, rgba(107, 50, 24, 0.90) 100%);
+    background: linear-gradient(135deg, rgba(107, 50, 24, 0.88) 0%, rgba(154, 84, 40, 0.82) 100%);
 }
 
-.page-header-content {
+.story-content {
     position: relative;
     z-index: 1;
+    max-width: 800px;
 }
 
 .page-label {
@@ -137,27 +142,75 @@ body {
     letter-spacing: 4px;
     text-transform: uppercase;
     color: #F7F5F0;
-    margin-bottom: 15px;
+    margin-bottom: 15px;  /* Reduced from 20px */
     font-weight: 600;
     border-bottom: 2px solid #C68E17;
-    padding-bottom: 5px;
+    padding-bottom: 6px;  /* Reduced from 8px */
 }
 
 .page-title {
-    font-size: 48px;
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;  /* Reduced from 72px */
+    font-weight: 400;
     color: #fff;
-    font-weight: 300;
-    margin-top: 15px;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    margin-bottom: 25px;  /* Reduced from 40px */
+    text-shadow: 0 2px 15px rgba(0,0,0,0.3);
+    letter-spacing: 1px;
 }
 
-/* ================= SECTIONS ================= */
-.section-container {
+.story-quote {
+    margin-top: 20px;  /* Reduced from 30px */
+    padding-top: 20px;  /* Reduced from 30px */
+    border-top: 1px solid rgba(198, 142, 23, 0.4);
+}
+
+.quote-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;  /* Reduced from 80px */
+    color: #C68E17;
+    line-height: 0.5;
+    display: block;
+    margin-bottom: 8px;  /* Reduced from 10px */
+    opacity: 0.9;
+}
+
+.quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;  /* Reduced from 24px */
+    font-style: italic;
+    color: rgba(247, 245, 240, 0.95);
+    line-height: 1.5;  /* Reduced from 1.6 */
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .story-header {
+        padding: 60px 5% 40px;
+        min-height: 300px;
+    }
+    
+    .page-title {
+        font-size: 36px;
+    }
+    
+    .quote-text {
+        font-size: 16px;
+    }
+}
+/* ================= ABOUT SECTION ================= */
+.about-section {
+    padding: 100px 5%;
+    background-color: #F7F5F0;
+}
+
+.about-container {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 80px;
     align-items: center;
 }
 
@@ -167,8 +220,12 @@ body {
     letter-spacing: 3px;
     text-transform: uppercase;
     color: #C68E17;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     font-weight: 600;
+}
+
+.section-label.light {
+    color: #e6b66f;
 }
 
 .section-label.centered {
@@ -176,15 +233,20 @@ body {
     text-align: center;
 }
 
-.section-title {
-    font-size: 36px;
+.section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 400;
     color: #3A1F0F;
-    margin-bottom: 20px;
-    font-weight: 300;
-    font-family: Georgia, serif;
+    margin-bottom: 30px;
+    line-height: 1.2;
 }
 
-.section-title.centered {
+.section-heading.light {
+    color: #F7F5F0;
+}
+
+.section-heading.centered {
     text-align: center;
     margin-bottom: 50px;
 }
@@ -193,142 +255,274 @@ body {
     font-size: 16px;
     line-height: 1.8;
     color: #5C4033;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
-/* ================= ABOUT SECTION ================= */
-.about-section {
-    padding: 80px 5%;
-    background-color: #F7F5F0;
+.section-description.light {
+    color: rgba(247, 245, 240, 0.9);
 }
 
-.about-content {
-    padding: 20px;
+/* About Image with Quote Overlay */
+.about-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
 }
 
 .about-image {
-    display: flex;
-    justify-content: center;
-}
-
-.image-frame {
     width: 100%;
-    max-width: 400px;
-    height: 400px;
-    background: linear-gradient(145deg, #fffdf8, #f4f0e8);
-    border: 2px solid #C68E17;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 30px rgba(58, 31, 15, 0.15);
-    transition: all 0.3s ease;
+    height: 500px;
+    object-fit: cover;
+    display: block;
 }
 
-.image-frame:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(58, 31, 15, 0.25);
+.image-quote-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(58, 31, 15, 0.95));
+    padding: 60px 40px 40px;
+    text-align: left;
 }
 
-.image-placeholder {
-    font-size: 120px;
-    opacity: 0.6;
+.image-quote-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    color: #C68E17;
+    line-height: 0.5;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.image-quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: #F7F5F0;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.image-quote-author {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #C68E17;
+    font-weight: 600;
 }
 
 /* ================= VISION SECTION ================= */
 .vision-section {
-    padding: 80px 5%;
+    padding: 100px 5%;
     background: linear-gradient(180deg, #3A1F0F 0%, #2C1A12 100%);
 }
 
-.vision-section .section-container {
-    direction: rtl;
+.vision-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
 }
 
-.vision-section .section-container > * {
-    direction: ltr;
+.vision-quote-box {
+    background: rgba(247, 245, 240, 0.05);
+    border: 1px solid rgba(198, 142, 23, 0.3);
+    border-radius: 8px;
+    padding: 50px 40px;
+    text-align: center;
+    transition: all 0.3s ease;
 }
 
-.vision-section .section-label {
-    color: #e6b66f;
+.vision-quote-box:hover {
+    background: rgba(247, 245, 240, 0.08);
+    border-color: #C68E17;
 }
 
-.vision-section .section-title {
+.vision-quote-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    color: #C68E17;
+    line-height: 0.5;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.vision-quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-style: italic;
     color: #F7F5F0;
+    line-height: 1.5;
+    margin-bottom: 20px;
 }
 
-.vision-section .section-description {
-    color: rgba(247, 245, 240, 0.9);
+.vision-quote-author {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #e6b66f;
+    font-weight: 600;
+    display: inline-block;
+    padding-top: 15px;
+    border-top: 1px solid rgba(198, 142, 23, 0.3);
 }
 
-.vision-section .image-frame {
-    background: linear-gradient(145deg, #4a2e1e, #3A1F0F);
-    border-color: #e6b66f;
-}
-
-/* ================= WHY CHOOSE US ================= */
+/* ================= WHY CHOOSE US - UPDATED ================= */
 .whyus-section {
-    padding: 80px 5%;
+    padding: 100px 5%;
     background-color: #F7F5F0;
+}
+
+.whyus-container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .values-section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 .value-box {
     background: linear-gradient(145deg, #fffdf8, #f4f0e8);
-    padding: 40px 30px;
-    border: 1px solid #C68E17;
+    padding: 50px 35px 40px;
+    border: 1px solid rgba(198, 142, 23, 0.3);
     border-radius: 8px;
     text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(58, 31, 15, 0.1);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .value-box:hover {
     background: linear-gradient(180deg, #e6b66f 0%, #c98a45 25%, #9a5428 55%, #6b3218 100%);
-    color: white;
     border-color: #6b3218;
-    box-shadow: 0 10px 30px rgba(58, 31, 15, 0.3);
-    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(58, 31, 15, 0.25);
+    transform: translateY(-8px);
 }
 
-.value-box .icon {
-    font-size: 50px;
-    margin-bottom: 20px;
+/* Icon Wrapper */
+.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(198, 142, 23, 0.1);
+    border-radius: 50%;
+    margin-bottom: 25px;
+    transition: all 0.4s ease;
+}
+
+.value-box:hover .icon-wrapper {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* SVG Icon */
+.value-icon {
+    width: 40px;
+    height: 40px;
     color: #C68E17;
-    transition: color 0.3s ease;
+    transition: color 0.4s ease;
 }
 
-.value-box:hover .icon {
+.value-box:hover .value-icon {
     color: #fff;
 }
 
 .value-box h3 {
-    font-size: 22px;
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
     color: #3A1F0F;
     margin-bottom: 15px;
-    font-family: Georgia, serif;
-    transition: color 0.3s ease;
+    font-weight: 600;
+    transition: color 0.4s ease;
 }
 
 .value-box:hover h3 {
     color: #fff;
 }
 
-.value-box p {
+.value-description {
     font-size: 15px;
     color: #5C4033;
     line-height: 1.6;
-    transition: color 0.3s ease;
+    margin-bottom: 20px;
+    transition: color 0.4s ease;
 }
 
-.value-box:hover p {
+.value-box:hover .value-description {
     color: rgba(255, 255, 255, 0.95);
+}
+
+/* Divider */
+.value-divider {
+    width: 40px;
+    height: 2px;
+    background: #C68E17;
+    margin: 15px 0;
+    transition: background 0.4s ease;
+}
+
+.value-box:hover .value-divider {
+    background: #fff;
+}
+
+/* Quote */
+.value-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-style: italic;
+    color: #3A1F0F;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    transition: color 0.4s ease;
+}
+
+.value-box:hover .value-quote {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.value-quote-author {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #C68E17;
+    font-weight: 600;
+    transition: color 0.4s ease;
+}
+
+.value-box:hover .value-quote-author {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 968px) {
+    .values-section {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .value-box {
+        padding: 40px 30px 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    .value-box h3 {
+        font-size: 22px;
+    }
+
+    .value-quote {
+        font-size: 15px;
+    }
 }
 
 /* ================= FOOTER ================= */
@@ -382,7 +576,7 @@ body {
 .footer-heading {
     font-size: 16px;
     font-weight: 600;
-    color: #C68E17;
+    color: #2C1A12;
     margin-bottom: 20px;
     letter-spacing: 1px;
 }
@@ -443,13 +637,18 @@ body {
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 968px) {
-    .section-container {
+    .about-container,
+    .vision-container {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 50px;
     }
 
-    .vision-section .section-container {
-        direction: ltr;
+    .page-title {
+        font-size: 52px;
+    }
+
+    .section-heading {
+        font-size: 32px;
     }
 
     .values-section {
@@ -484,17 +683,25 @@ body {
 
 @media (max-width: 768px) {
     .page-title {
-        font-size: 36px;
+        font-size: 42px;
     }
 
-    .section-title {
+    .quote-text {
+        font-size: 20px;
+    }
+
+    .vision-quote-text {
+        font-size: 22px;
+    }
+
+    .section-heading {
         font-size: 28px;
     }
 
     .about-section,
     .vision-section,
     .whyus-section {
-        padding: 60px 5%;
+        padding: 70px 5%;
     }
 
     .footer-grid {
